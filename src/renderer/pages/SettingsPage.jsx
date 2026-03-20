@@ -7,7 +7,7 @@ const IS = typeof window !== 'undefined' && window.spicegames?.isElectron
 
 // ── Themes ────────────────────────────────────────────────────────────────────
 const THEMES = [
-    { id: 'red', label: 'Crimson', accent: '#EF4444', bg: '#0F0808', desc: 'Deep red · Default' },
+    { id: 'red', label: 'Crimson', accent: '#EF4444', bg: '#0F0808', desc: 'Deep red' },
     { id: 'dark', label: 'Dark', accent: '#6366F1', bg: '#08080F', desc: 'Indigo dark' },
     { id: 'neon', label: 'Neon', accent: '#00FF88', bg: '#050A05', desc: 'Green matrix' },
     { id: 'ember', label: 'Ember', accent: '#F97316', bg: '#0C0806', desc: 'Warm orange' },
