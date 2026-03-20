@@ -56,8 +56,8 @@ Game metadata is fetched directly from public APIs (Steam, SteamSpy, OpenCritic)
 
 ## Legal
 
-- [Privacy Policy](PRIVACY_POLICY.md)
-- [Terms of Service](TERMS_OF_SERVICE.md)
+- [Privacy Policy](https://ash-kernel.github.io/SpiceGames/#legal)
+- [Terms of Service](https://ash-kernel.github.io/SpiceGames/#legal)
 
 © SpiceGames. All rights reserved. 
 Redistribution or resale is not permitted.
