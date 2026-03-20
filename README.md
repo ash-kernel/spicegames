@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.png" width="88" height="88" alt="SpiceGames" />
+<img src="assets/banner.png" alt="SpiceGames" />
 
 # SpiceGames
 
