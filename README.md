@@ -42,7 +42,8 @@
 
 ## Screenshots
 
-> Coming soon
+![Demo1](assets/demo1.png)
+![Demo2](assets/demo2.png)
 
 ---
 
