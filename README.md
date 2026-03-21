@@ -116,8 +116,6 @@ All data is stored **locally on your device**.
 
 Game metadata is fetched directly from public APIs on your machine.
 
-📄 Read more: PRIVACY_POLICY.md
-
 ---
 
 ## 🛠 Tech Overview
