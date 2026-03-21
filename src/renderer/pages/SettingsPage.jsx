@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { useStore } from '../store/useStore'
 import toast from 'react-hot-toast'
 
-const IS = typeof window !== 'undefined' && window.spicegames?.isElectron
+const IS = typeof window !== 'undefined' && window.spicedeck?.isElectron
 
 // ── Themes ────────────────────────────────────────────────────────────────────
 const THEMES = [
@@ -110,8 +110,8 @@ export default function SettingsPage() {
     useEffect(() => {
         if (settings) setLocal(settings)
         if (IS) {
-            window.spicegames.getAppVersion().then(v => setVersion(v)).catch(() => { })
-            window.spicegames.getStartupStatus().then(s => setStartupStatus(s)).catch(() => { })
+            window.spicedeck.getAppVersion().then(v => setVersion(v)).catch(() => { })
+            window.spicedeck.getStartupStatus().then(s => setStartupStatus(s)).catch(() => { })
         }
     }, [settings])
 
@@ -126,10 +126,10 @@ export default function SettingsPage() {
         if (!IS) { toast('Only works in the installed desktop app', { icon: '💡' }); return }
         setStartupLoading(true)
         try {
-            await window.spicegames.setRunOnStartup(enable)
+            await window.spicedeck.setRunOnStartup(enable)
             set('runOnStartup', enable)
             setStartupStatus(s => ({ ...s, enabled: enable }))
-            toast.success(enable ? 'SpiceGames will launch on startup' : 'Removed from startup')
+            toast.success(enable ? 'SpiceDeck will launch on startup' : 'Removed from startup')
         } catch { toast.error('Failed to update startup setting') }
         setStartupLoading(false)
     }
@@ -137,7 +137,7 @@ export default function SettingsPage() {
     const handleExport = () => {
         const blob = new Blob([JSON.stringify(games, null, 2)], { type: 'application/json' })
         const url = URL.createObjectURL(blob)
-        Object.assign(document.createElement('a'), { href: url, download: 'spicegames-library.json' }).click()
+        Object.assign(document.createElement('a'), { href: url, download: 'spicedeck-library.json' }).click()
         URL.revokeObjectURL(url)
         toast.success('Library exported!')
     }
@@ -148,7 +148,7 @@ export default function SettingsPage() {
             {/* Page title */}
             <div style={{ marginBottom: 26 }}>
                 <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 900, color: 'var(--text)', lineHeight: 1 }}>Settings</h1>
-                <p style={{ fontSize: 13, color: 'var(--text3)', marginTop: 5 }}>Customize SpiceGames to your setup</p>
+                <p style={{ fontSize: 13, color: 'var(--text3)', marginTop: 5 }}>Customize SpiceDeck to your setup</p>
             </div>
 
             <div style={{ maxWidth: 680 }}>
@@ -201,7 +201,7 @@ export default function SettingsPage() {
                         desc={
                             !IS ? 'Only available in the installed desktop app' :
                                 !startupStatus.supported ? 'Only available in packaged build (npm run build)' :
-                                    'Launch SpiceGames automatically when you log in to Windows'
+                                    'Launch SpiceDeck automatically when you log in to Windows'
                         }>
                         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                             {startupLoading && <div style={{ width: 16, height: 16, border: '2px solid var(--accent)', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin .7s linear infinite' }} />}
@@ -212,7 +212,7 @@ export default function SettingsPage() {
                             />
                         </div>
                     </Row>
-                    <Row label="Minimize on game launch" desc="Minimize SpiceGames window when a game starts">
+                    <Row label="Minimize on game launch" desc="Minimize SpiceDeck window when a game starts">
                         <Toggle value={local.minimizeOnLaunch !== false} onChange={v => set('minimizeOnLaunch', v)} />
                     </Row>
                     <Row label="Track playtime" desc="Record how long you play each session" last>
@@ -289,19 +289,19 @@ export default function SettingsPage() {
 
                 {/* ── LEGAL ───────────────────────────────────────────── */}
                 <Section title="Legal">
-                    <Row label="Privacy Policy" desc="How SpiceGames handles your data — we collect nothing">
+                    <Row label="Privacy Policy" desc="How SpiceDeck handles your data — we collect nothing">
                         <div style={{ display: 'flex', gap: 8 }}>
                             {/* Online hosted version — replace # with your URL when published */}
-                            <a href="https://ash-kernel.github.io/spicegames/#legal"
+                            <a href="https://ash-kernel.github.io/spicedeck/#legal"
                                 target="_blank" rel="noreferrer" style={linkStyle}>
                                 View ↗
                             </a>
                         </div>
                     </Row>
-                    <Row label="Terms of Service" desc="Rules and conditions for using SpiceGames" last>
+                    <Row label="Terms of Service" desc="Rules and conditions for using SpiceDeck" last>
                         <div style={{ display: 'flex', gap: 8 }}>
                             {/* Online hosted version — replace # with your URL when published */}
-                            <a href="https://ash-kernel.github.io/spicegames/#legal"
+                            <a href="https://ash-kernel.github.io/spicedeck/#legal"
                                 target="_blank" rel="noreferrer" style={linkStyle}>
                                 View ↗
                             </a>
@@ -313,10 +313,10 @@ export default function SettingsPage() {
                 <Section title="About">
                     {/* App info */}
                     <div style={{ padding: '18px 20px', borderBottom: '1px solid var(--border)', display: 'flex', gap: 14, alignItems: 'center' }}>
-                        <img src={logoSvg} alt="SpiceGames" style={{ width: 52, height: 52, borderRadius: 14, flexShrink: 0, boxShadow: '0 4px 16px rgba(99,102,241,.35)' }} />
+                        <img src={logoSvg} alt="SpiceDeck" style={{ width: 52, height: 52, borderRadius: 14, flexShrink: 0, boxShadow: '0 4px 16px rgba(99,102,241,.35)' }} />
                         <div>
-                            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 18, color: 'var(--text)', marginBottom: 3 }}>SpiceGames</div>
-                            <div style={{ fontSize: 12, color: 'var(--text3)', lineHeight: 1.6 }}>Corporate-grade personal game launcher</div>
+                            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 18, color: 'var(--text)', marginBottom: 3 }}>SpiceDeck</div>
+                            <div style={{ fontSize: 12, color: 'var(--text3)', lineHeight: 1.6 }}>A personal game launcher</div>
                             <div style={{ display: 'flex', gap: 8, marginTop: 6 }}>
                                 <span style={{ fontSize: 11, fontWeight: 700, padding: '2px 9px', borderRadius: 20, background: `rgba(var(--accent-rgb),.12)`, color: 'var(--accent)' }}>v{version}</span>
                                 <span style={{ fontSize: 11, padding: '2px 9px', borderRadius: 20, background: 'var(--bg4)', color: 'var(--text3)' }}>Electron 28 · React 18</span>
@@ -339,7 +339,7 @@ export default function SettingsPage() {
                     </Row>
 
                     <Row label="Repository" desc="Source code and releases" last>
-                        <a href="https://github.com/ash-kernel/spicegames" target="_blank" rel="noreferrer"
+                        <a href="https://github.com/ash-kernel/spicedeck" target="_blank" rel="noreferrer"
                             style={{ fontSize: 13, color: 'var(--accent)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 5, padding: '7px 14px', borderRadius: 9, border: '1px solid var(--border2)', background: 'var(--bg3)', transition: 'all .18s' }}
                             onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg4)' }}
                             onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg3)' }}>

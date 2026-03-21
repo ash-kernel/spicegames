@@ -11,7 +11,7 @@ import AddGameModal from './components/AddGameModal'
 import GameDetailPanel from './components/GameDetailPanel'
 import { useStore } from './store/useStore'
 
-const IS = typeof window !== 'undefined' && window.spicegames?.isElectron
+const IS = typeof window !== 'undefined' && window.spicedeck?.isElectron
 
 export default function App() {
     const init = useStore(s => s.init)

@@ -1,71 +1,159 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="SpiceGames" width="600" />
+<img src="assets/banner.png" alt="SpiceDeck Banner" width="400" />
 
-# SpiceGames
+# SpiceDeck
 
-**A modern personal game launcher for Windows**
+### A modern, lightweight game launcher for Windows
+
+Organize, track, and launch your entire game library — all in one place.
+
+<br/>
 
 [![Platform](https://img.shields.io/badge/Platform-Windows-blue?logo=windows&logoColor=white)](#)
+[![Version](https://img.shields.io/github/v/release/ash-kernel/spicedeck?color=blue)](https://github.com/ash-kernel/spicedeck/releases)
+[![Downloads](https://img.shields.io/github/downloads/ash-kernel/spicedeck/total?color=blue)](https://github.com/ash-kernel/spicedeck/releases)
 [![License](https://img.shields.io/badge/License-Proprietary-red)](#)
-[![Author](https://img.shields.io/badge/Author-ash--kernel-181717?logo=github)](https://github.com/ash-kernel)
 
-[⬇ Download](#download) · [✦ Features](#features) · [📸 Screenshots](#screenshots) · [⚖ Legal](#legal)
+<br/>
+
+[⬇ Download](#-download) • [✨ Features](#-features) • [📸 Screenshots](#-screenshots) • [⚡ Why SpiceDeck](#-why-spicedeck) • [⚖ Legal](#-legal)
 
 </div>
 
 ---
 
-## Download
+## ⬇ Download
 
-| Platform | Link |
-|----------|------|
-| Windows (Installer) | [Download](https://github.com/ash-kernel/SpiceGames/releases/download/stable/SpiceGames.Setup.exe) |
+| Platform | Installer |
+|----------|----------|
+| 🪟 Windows | [Download Latest](https://github.com/ash-kernel/spicedeck/releases/download/stable/SpiceDeck.Setup.exe) |
 
-_im not rich enough to afford mac as soon as i get one you'll see mac here_
+> 📦 You can also find all versions on the Releases page:
+> https://github.com/ash-kernel/spicedeck/releases
 
-> Check [Releases](https://github.com/ash-kernel/spicegames/releases) for the latest version.
-
----
-
-## Features
-
-- **Add any game** — browse to any `.exe` on your computer and add it to your library
-- **Auto metadata** — cover art, descriptions, genres, scores and screenshots fetched automatically from Steam
-- **Multiple review sources** — Steam user reviews, Metacritic and OpenCritic scores all in one place
-- **Discover page** — browse and search 50,000+ games, view trailers and screenshots before adding
-- **Playtime tracking** — see how long you've played each game
-- **Themes** — Crimson, Dark, Neon and Ember
-- **Run on startup** — launches automatically when you log in
-- **No account needed** — fully local, no sign-up, no tracking
+> 🍎 macOS support planned (when I get access to a Mac 👀)
 
 ---
 
-## Screenshots
+## ✨ Features
 
-<img src="assets/demo1.png" alt="Demo1" width="500" />
-<img src="assets/demo2.png" alt="Demo2" width="500" />
+### 🎮 Game Library
+- Add **any game** from your system (`.exe`)
+- Clean and organized library view
+- Fast launching with one click
+
+### 🧠 Smart Metadata
+- Auto-fetch:
+  - Cover art  
+  - Descriptions  
+  - Genres  
+  - Screenshots  
+- Powered by Steam, SteamSpy & OpenCritic
+
+### 📊 Game Insights
+- Track **playtime automatically**
+- View ratings from:
+  - Steam users  
+  - Metacritic  
+  - OpenCritic  
+
+### 🔎 Discover
+- Explore **50,000+ games**
+- Search, preview, and add instantly
+- View trailers and screenshots before installing
+
+### 🎨 Customization
+- Multiple themes:
+  - Crimson  
+  - Dark  
+  - Neon  
+  - Ember  
+
+### ⚡ System Integration
+- Optional **run on startup**
+- Fully local — no accounts, no login
 
 ---
 
-## Privacy
+## ⚡ Why SpiceDeck?
 
-SpiceGames stores all data **locally on your device only**. We collect no personal information, send no analytics and require no account.
+Most launchers are either:
+- ❌ bloated  
+- ❌ tied to a platform  
+- ❌ require accounts  
 
-Game metadata is fetched directly from public APIs (Steam, SteamSpy, OpenCritic) on your machine. Read the full [Privacy Policy](PRIVACY_POLICY.md).
+**SpiceDeck is different:**
+- ✅ Works with *any game*  
+- ✅ Fully offline & private  
+- ✅ Lightweight and fast  
+- ✅ No tracking, no nonsense  
 
 ---
 
-## Legal
+## 📸 Screenshots
 
-- [Privacy Policy](https://ash-kernel.github.io/SpiceGames/#legal)
-- [Terms of Service](https://ash-kernel.github.io/SpiceGames/#legal)
+<div align="center">
 
-© SpiceGames. All rights reserved. 
+<img src="assets/demo1.png" alt="Library View" width="600"/>
+<br/><br/>
+<img src="assets/demo2.png" alt="Game Details" width="600"/>
+
+</div>
+
+---
+
+## 🔒 Privacy
+
+SpiceDeck respects your privacy.
+
+- No accounts  
+- No analytics  
+- No tracking  
+- No cloud storage  
+
+All data is stored **locally on your device**.
+
+Game metadata is fetched directly from public APIs on your machine.
+
+📄 Read more: PRIVACY_POLICY.md
+
+---
+
+## 🛠 Tech Overview
+
+- Desktop app (Windows)
+- Local data storage
+- External APIs:
+  - Steam
+  - SteamSpy
+  - OpenCritic
+
+---
+
+## 🚀 Roadmap
+
+- [ ] macOS support  
+- [ ] Cloud sync (optional)  
+- [ ] Controller detection  
+- [ ] Advanced stats dashboard  
+- [ ] Plugin system  
+
+---
+
+## ⚖ Legal
+
+- Privacy Policy: https://ash-kernel.github.io/spicedeck/#legal  
+- Terms of Service: https://ash-kernel.github.io/spicedeck/#legal  
+
+© SpiceDeck. All rights reserved.  
 Redistribution or resale is not permitted.
 
 ---
 
 <div align="center">
-  Made by <a href="https://github.com/ash-kernel">ash-kernel</a>
+
+Made with 💻 by  
+https://github.com/ash-kernel
+
 </div>

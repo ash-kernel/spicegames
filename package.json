@@ -1,9 +1,9 @@
 {
-  "name": "spicegames",
+  "name": "spicedeck",
   "version": "1.0.0",
-  "description": "SpiceGames — A game launcher.",
+  "description": "SpiceDeck — A game launcher.",
   "main": "src/main/main.js",
-  "author": "SpiceGames",
+  "author": "SpiceDeck",
   "license": "UNLICENSED",
   "scripts": {
     "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
@@ -28,9 +28,9 @@
     "react-hot-toast": "^2.4.1"
   },
   "build": {
-    "appId": "com.spicegames.app",
-    "productName": "SpiceGames",
-    "copyright": "© SpiceGames. All rights reserved.",
+    "appId": "com.spicedeck.app",
+    "productName": "SpiceDeck",
+    "copyright": "© SpiceDeck. All rights reserved.",
     "directories": {
       "output": "dist-electron",
       "buildResources": "assets"
@@ -70,7 +70,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "SpiceGames"
+      "shortcutName": "SpiceDeck"
     }
   }
 }

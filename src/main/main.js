@@ -5,7 +5,7 @@ const https = require('https')
 const http = require('http')
 const { spawn, execFile } = require('child_process')
 
-const storePath = path.join(app.getPath('userData'), 'spicegames.json')
+const storePath = path.join(app.getPath('userData'), 'spicedeck.json')
 function readStore() { try { if (fs.existsSync(storePath)) return JSON.parse(fs.readFileSync(storePath, 'utf8')) } catch (_) { } return {} }
 function writeStore(d) { try { fs.writeFileSync(storePath, JSON.stringify(d, null, 2)) } catch (_) { } }
 function getStore(k, def) { const s = readStore(); return k in s ? s[k] : def }
@@ -38,7 +38,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1400, height: 860, minWidth: 1100, minHeight: 700,
         frame: false, titleBarStyle: 'hidden',
-        title: 'SpiceGames',
+        title: 'SpiceDeck',
         backgroundColor: '#0A0A0F',
         icon: iconPath,
         webPreferences: {
@@ -62,12 +62,12 @@ function applyStartupSetting(enable) {
 
         app.setLoginItemSettings({
             openAtLogin: enable,
-            name: 'SpiceGames',
+            name: 'SpiceDeck',
             args: ['--hidden'],
         })
     } else {
 
-        console.log('[SpiceGames] Startup setting (dev mode, skipped):', enable)
+        console.log('[SpiceDeck] Startup setting (dev mode, skipped):', enable)
     }
 }
 
@@ -176,7 +176,7 @@ function nodeFetch(url, headers = {}) {
     return new Promise((resolve, reject) => {
         const proto = url.startsWith('https') ? https : http
         proto.get(url, {
-            headers: { 'User-Agent': 'SpiceGames/1.0', ...headers }
+            headers: { 'User-Agent': 'SpiceDeck/1.0', ...headers }
         }, res => {
             if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
                 return nodeFetch(res.headers.location, headers).then(resolve).catch(reject)
@@ -226,7 +226,7 @@ ipcMain.handle('search-game', async (_, { name }) => {
             }
         })
     } catch (e) {
-        console.error('[SpiceGames] Steam search error:', e.message)
+        console.error('[SpiceDeck] Steam search error:', e.message)
         return []
     }
 })
@@ -324,7 +324,7 @@ ipcMain.handle('get-game-details', async (_, { steamId }) => {
             tags: spyData.spyTags.length ? spyData.spyTags : (d.categories || []).map(x => x.description).slice(0, 8),
         }
     } catch (e) {
-        console.error('[SpiceGames] Details error:', e.message)
+        console.error('[SpiceDeck] Details error:', e.message)
         return null
     }
 })

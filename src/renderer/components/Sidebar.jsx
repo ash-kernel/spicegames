@@ -57,9 +57,9 @@ export default function Sidebar() {
 
       {}
       <div style={{ display:'flex', alignItems:'center', gap:12, padding:'8px 18px', marginBottom:16, minWidth:'var(--sidebar-exp)' }}>
-        <img src={logoSvg} alt="SpiceGames" style={{ width:36, height:36, minWidth:36, borderRadius:10, boxShadow:'var(--shadow-glow)' }} />
+        <img src={logoSvg} alt="SpiceDeck" style={{ width:36, height:36, minWidth:36, borderRadius:10, boxShadow:'var(--shadow-glow)' }} />
         <div style={{ opacity:expanded?1:0, transition:'opacity .15s' }}>
-          <div style={{ fontFamily:'var(--font-display)', fontWeight:800, fontSize:16, color:'var(--text)', lineHeight:1 }}>SpiceGames</div>
+          <div style={{ fontFamily:'var(--font-display)', fontWeight:800, fontSize:16, color:'var(--text)', lineHeight:1 }}>SpiceDeck</div>
           <div style={{ fontSize:11, color:'var(--text3)', marginTop:2 }}>{games.length} games</div>
         </div>
       </div>
