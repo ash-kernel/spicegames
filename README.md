@@ -48,46 +48,62 @@ Organize, track, and launch your entire game library — all in one place.
   - Cover art & screenshots
   - Game descriptions
   - Genres & tags
-- Data from Steam, SteamSpy & OpenCritic
+- Data from Steam, SteamSpy & Metacritic
 - **HowLongToBeat integration** — See how long games take to complete
 
-### 📊 Game Insights
-- **Track playtime** automatically
+### 📊 Game Insights & Statistics
+- **Track playtime** automatically with session history
+- Visual charts: playtime by day, genre breakdown
 - View ratings & reviews:
   - Steam community scores
   - Metacritic ratings
   - OpenCritic scores
 
+### 📚 Game Collections & Status
+- Organize with default collections: Favorites, Playing Now, Backlog, Completed, Wishlist
+- Track game status: Not Started, Playing, Completed, Dropped, On Hold
+- Per-game notes & launch arguments
+- Advanced sorting & filtering by name, date, playtime, rating
+
 ### 🔎 Discover & Explore
-- Browse **50,000+ games**
-- Search by title, genre, or tags
-- Preview games before adding
-- Watch trailers & view screenshots
+- Dedicated **Discover** tab to browse 50,000+ games
+- Filter by genre, trending, new releases, top-rated
+- Search by title or tags
+- Preview trailers & screenshots before adding
 
 ### 📰 Game News & Updates
 - Real-time gaming news from top gaming outlets
 - PC Gamer, Rock Paper Shotgun, Eurogamer, IGN
-- Stay updated on new releases & deals
+- Stay updated on launches, reviews & events
 
 ### 🎨 Themes & Customization
-- 8 beautiful themes:
-  - Crimson, Dark, Neon, Ember
-  - Rose, Ocean, Gold, Cyber
-- Toggle tabs on/off for custom layouts
-- Configure your perfect game launcher
+- 8 beautiful themes: Indigo, Crimson, Matrix, Ember, Rose, Ocean, Gold, Cyber
+- Toggle library tabs (itch.io, Deals, News) on/off
+- Customize your perfect game launcher
 
 ### 💰 Smart Deals
-- Browse game deals across multiple stores
+- Browse game deals across Steam, GOG, Epic Games, Humble Bundle & more
 - **Multi-currency support** — View prices in your local currency
-- Filter by discount percentage and price range
+- Filter by discount percentage, price range & store rating
 
-### 🎮 GamePad Tester
+### 🎮 Performance Overlay
+- AMD Adrenaline-style in-game metrics overlay
+- Real-time FPS, CPU, GPU, temperature monitoring
+- Configurable per game profile
+- Transparent overlay renders over gameplay
+
+### 🎮 GamePad Tester & Support
 - Built-in controller detection & testing
+- Full gamepad navigation through tabs & library
 - Verify your gamepad works before launching games
 
 ### ⚡ System Integration
 - Run on Windows startup *(optional)*
+- Minimize to system tray with toggle control
 - **Auto-update checker** — Stay on the latest version
+- Import games directly from Steam
+- Floating widget overlay for active game tracking
+- Screenshot scanner — organize game screenshots
 - Fully offline & local
 - No accounts or login required
 
@@ -137,12 +153,15 @@ Game metadata is fetched directly from public APIs on your machine.
 
 ## 🛠 Tech Overview
 
-- Desktop app (Windows)
+- Desktop app (Windows) built with Electron & React
 - Local data storage
 - External APIs:
-  - Steam
-  - SteamSpy
-  - OpenCritic
+  - Steam Store, SteamSpy & Steam CDN (game metadata)
+  - CheapShark (deals)
+  - itch.io (indie games)
+  - OpenCritic & Metacritic (reviews)
+  - HowLongToBeat (completion times)
+  - PC Gamer, Rock Paper Shotgun, Eurogamer & IGN (news feeds)
 
 ---
 
@@ -181,23 +200,28 @@ The app isn't code-signed because code-signing certificates cost $50-$300+ per y
 
 ---
 
-## 🔄 Recent Updates (v4.0.0)
+## 🔄 Recent Updates (v5.0.0)
 
 ### ✨ New Features
+- 🎮 **Performance Overlay** — AMD Adrenaline-style in-game metrics (FPS, CPU, GPU, temperature)
 - 📰 **Game News Tab** — Real-time gaming news from PC Gamer, Rock Paper Shotgun, Eurogamer & IGN
-- 🎮 **GamePad Tester** — Built-in controller detection and testing
-- 💱 **Multi-Currency Support** — View deals in your local currency
-- 🎨 **4 New Themes** — Rose, Ocean, Gold, Cyber (8 total now)
-- 📊 **Update Informer** — Auto-check for new versions
-- 🔀 **Customizable Tabs** — Toggle sections on/off for your perfect layout
-- 🕐 **HLTB Integration** — See completion times in game details
+- 🎮 **GamePad Navigation** — Full controller support for tabs & library browsing
+- 💱 **Multi-Currency Support** — View deals in USD, EUR, GBP, JPY, and more
+- 🎨 **8 Themes** — Indigo, Crimson, Matrix, Ember, Rose, Ocean, Gold, Cyber  
+- 📊 **Stats Dashboard** — Playtime charts, genre breakdowns, session history
+- 🔀 **Customizable Tabs** — Toggle itch.io, Deals, News on/off
+- 🕐 **HLTB Integration** — Completion times in game details
+- 📚 **Collections System** — Favorites, Playing Now, Backlog, Completed, Wishlist
+- 🎮 **Widget Mode** — Floating overlay showing current game & playtime
+- 📁 **Steam Integration** — Import games directly from your Steam library
+- 📸 **Screenshot Scanner** — Find and organize screenshots from any folder
 
-### 🐛 Fixes
-- ✅ System tray icon now displays correctly
-- ✅ Improved overall UI/UX
-
-### Removed
-- 🗑️ GOG support (focusing on Steam & itch.io)
+### 🐛 Improvements
+- ✅ Auto-update checker with one-click release access
+- ✅ System tray integration with minimize support
+- ✅ Enhanced game status tracking & collections
+- ✅ Streamlined UI/UX across all sections
+- ✅ Persistent game session history & statistics
 
 ---
 

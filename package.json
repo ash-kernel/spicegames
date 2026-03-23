@@ -1,10 +1,10 @@
 {
   "name": "spicedeck",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "SpiceDeck \u2014 Personal Game Launcher",
   "main": "src/main/main.js",
   "author": "ash-kernel",
-  "license": "LICENSE",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
     "build": "vite build && electron-builder",
@@ -30,7 +30,7 @@
   "build": {
     "appId": "com.spicedeck.app",
     "productName": "SpiceDeck",
-    "copyright": "\u00a9 SpiceDeck. All rights reserved.",
+    "copyright": "\u00a9 2025 SpiceDeck. All rights reserved.",
     "directories": {
       "output": "dist-electron",
       "buildResources": "assets"
@@ -85,7 +85,8 @@
       "installerHeader": "assets/installer-header.bmp",
       "installerSidebar": "assets/installer-sidebar.bmp",
       "deleteAppDataOnUninstall": false,
-      "runAfterFinish": true
+      "runAfterFinish": true,
+      "license": "LICENSE"
     }
   }
 }

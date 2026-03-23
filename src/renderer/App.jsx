@@ -11,6 +11,8 @@ import ScreenshotsPage from './pages/ScreenshotsPage'
 import StatsPage from './pages/StatsPage'
 import SettingsPage from './pages/SettingsPage'
 import GameNewsPage from './pages/GameNewsPage'
+import WishlistPage from './pages/WishlistPage'
+import WidgetPage from './pages/WidgetPage'
 import ControllerPage from './pages/ControllerPage'
 import AddGameModal from './components/AddGameModal'
 import GameDetailPanel from './components/GameDetailPanel'
@@ -154,6 +156,8 @@ function AppLayout() {
               <Route path="/itch"        element={<ItchPage />} />
               <Route path="/deals"       element={<DealsPage />} />
               <Route path="/news"        element={<GameNewsPage />} />
+              <Route path="/wishlist"     element={<WishlistPage />} />
+              <Route path="/widget"       element={<WidgetPage />} />
               <Route path="/controller"  element={<ControllerPage />} />
               <Route path="/screenshots" element={<ScreenshotsPage />} />
               <Route path="/stats"       element={<StatsPage />} />
