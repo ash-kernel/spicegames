@@ -45,9 +45,32 @@ export function GameCardGrid({ game, compact }) {
     catch (err) { toast.error(err.message) }
   }
 
+  const handleContextMenu = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    const menu = [
+      { label: '▶ Play', fn: handleLaunch },
+      { label: '📸 View Screenshots', fn: () => window.location.hash = '#/screenshots' },
+      { label: '⚙ Settings', fn: () => window.location.hash = '#/settings' },
+    ]
+    const menuDiv = document.createElement('div')
+    menuDiv.style.cssText = `position:fixed;top:${e.clientY}px;left:${e.clientX}px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;z-index:10000;box-shadow:0 8px 24px rgba(0,0,0,.6);min-width:180px;overflow:hidden;font-family:var(--font-body)`
+    menu.forEach((item, i) => {
+      const btn = document.createElement('button')
+      btn.textContent = item.label
+      btn.style.cssText = `width:100%;padding:10px 14px;border:none;background:transparent;color:var(--text);font-size:12px;cursor:pointer;text-align:left;transition:background .12s;font-family:inherit;${i < menu.length - 1 ? 'border-bottom:1px solid var(--border)' : ''}`
+      btn.onmouseover = () => btn.style.background = 'var(--bg3)'
+      btn.onmouseout = () => btn.style.background = 'transparent'
+      btn.onclick = () => { item.fn(); if (document.body.contains(menuDiv)) document.body.removeChild(menuDiv) }
+      menuDiv.appendChild(btn)
+    })
+    document.body.appendChild(menuDiv)
+    document.addEventListener('click', () => { if (document.body.contains(menuDiv)) document.body.removeChild(menuDiv) }, { once: true })
+  }
+
   if (compact) {
     return (
-      <div onClick={() => setSelectedGame(game)} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
+      <div onClick={() => setSelectedGame(game)} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)} onContextMenu={handleContextMenu}
         style={{ borderRadius:10, overflow:'hidden', cursor:'pointer', background:'var(--bg3)', border:`1px solid ${hov?'rgba(var(--accent-rgb),.25)':'var(--border)'}`, transition:'all .18s', display:'flex', alignItems:'center', gap:10, padding:8, position:'relative' }}>
         <div style={{ width:40, height:40, borderRadius:7, overflow:'hidden', position:'relative', flexShrink:0 }}>
           <Cover game={game} compact />
@@ -70,7 +93,7 @@ export function GameCardGrid({ game, compact }) {
   }
 
   return (
-    <div onClick={() => setSelectedGame(game)} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
+    <div onClick={() => setSelectedGame(game)} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)} onContextMenu={handleContextMenu}
       style={{ borderRadius:14, overflow:'hidden', cursor:'pointer', background:'var(--bg3)', border:`1px solid ${hov?'rgba(var(--accent-rgb),.3)':'var(--border)'}`, transform:hov?'translateY(-5px) scale(1.015)':'translateY(0) scale(1)', boxShadow:hov?'0 20px 50px rgba(0,0,0,.7),0 0 0 1px rgba(var(--accent-rgb),.2)':'0 4px 16px rgba(0,0,0,.4)', transition:'transform .3s cubic-bezier(.34,1.4,.64,1),box-shadow .3s,border-color .2s', position:'relative', willChange:'transform' }}>
       <div style={{ aspectRatio:'3/4', overflow:'hidden', background:'var(--bg4)', position:'relative' }}>
         <Cover game={game} />
@@ -101,9 +124,11 @@ export function GameCardGrid({ game, compact }) {
       </div>
 
       <div style={{ padding:'10px 11px 12px' }}>
-        <div style={{ display:'flex', alignItems:'center', gap:5, marginBottom:4 }}>
-          <div style={{ fontFamily:'var(--font-display)', fontWeight:700, fontSize:13, color:'var(--text)', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis', flex:1 }}>{game.name}</div>
-          {game.categories?.includes('Full controller support') && <span title="Full controller support" style={{ fontSize:12, flexShrink:0 }}>🎮</span>}
+        <div style={{ display:'flex', alignItems:'flex-start', gap:5, marginBottom:4, minHeight:18 }}>
+          <div style={{ fontFamily:'var(--font-display)', fontWeight:700, fontSize:13, color:'var(--text)', overflow:'hidden', textOverflow:'ellipsis', display:'-webkit-box', WebkitLineClamp:1, WebkitBoxOrient:'vertical', flex:1, minWidth:0 }}>{game.name}</div>
+          <div style={{ display:'flex', alignItems:'center', gap:4, flexShrink:0 }}>
+            {game.categories?.includes('Full controller support') && <span title="Full controller support" style={{ fontSize:12, flexShrink:0 }}>🎮</span>}
+          </div>
         </div>
         <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', gap:6 }}>
           <div style={{ display:'flex', alignItems:'center', gap:5, minWidth:0 }}>
@@ -151,8 +176,31 @@ export function GameCardList({ game }) {
     catch (err) { toast.error(err.message) }
   }
 
+  const handleContextMenu = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    const menu = [
+      { label: '▶ Play', fn: handleLaunch },
+      { label: '📸 View Screenshots', fn: () => window.location.hash = '#/screenshots' },
+      { label: '⚙ Settings', fn: () => window.location.hash = '#/settings' },
+    ]
+    const menuDiv = document.createElement('div')
+    menuDiv.style.cssText = `position:fixed;top:${e.clientY}px;left:${e.clientX}px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;z-index:10000;box-shadow:0 8px 24px rgba(0,0,0,.6);min-width:180px;overflow:hidden;font-family:var(--font-body)`
+    menu.forEach((item, i) => {
+      const btn = document.createElement('button')
+      btn.textContent = item.label
+      btn.style.cssText = `width:100%;padding:10px 14px;border:none;background:transparent;color:var(--text);font-size:12px;cursor:pointer;text-align:left;transition:background .12s;font-family:inherit;${i < menu.length - 1 ? 'border-bottom:1px solid var(--border)' : ''}`
+      btn.onmouseover = () => btn.style.background = 'var(--bg3)'
+      btn.onmouseout = () => btn.style.background = 'transparent'
+      btn.onclick = () => { item.fn(); if (document.body.contains(menuDiv)) document.body.removeChild(menuDiv) }
+      menuDiv.appendChild(btn)
+    })
+    document.body.appendChild(menuDiv)
+    document.addEventListener('click', () => { if (document.body.contains(menuDiv)) document.body.removeChild(menuDiv) }, { once: true })
+  }
+
   return (
-    <div onClick={() => setSelectedGame(game)} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
+    <div onClick={() => setSelectedGame(game)} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)} onContextMenu={handleContextMenu}
       style={{ display:'flex', alignItems:'center', gap:14, padding:'10px 14px', borderRadius:12, cursor:'pointer', background:hov?'var(--bg3)':'transparent', border:`1px solid ${hov?'var(--border2)':'transparent'}`, transition:'all .18s' }}>
       <div style={{ width:56, height:56, borderRadius:8, overflow:'hidden', background:'var(--bg4)', flexShrink:0, position:'relative' }}>
         {imgSrc

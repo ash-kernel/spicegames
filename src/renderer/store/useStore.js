@@ -161,9 +161,9 @@ export const useStore = create((set, get) => ({
   },
 
   applyTheme: (theme) => {
-    document.body.classList.remove('theme-red','theme-neon','theme-ember','theme-rose','theme-teal','theme-gold','theme-cyber')
-    if (theme !== 'dark') document.body.classList.add(`theme-${theme}`)
-    const defaults = { slate:'#0EA5E9', dark:'#6366F1', red:'#EF4444', neon:'#00FF88', ember:'#F97316' }
+    document.body.classList.remove('theme-red','theme-neon','theme-ember','theme-rose','theme-teal','theme-gold','theme-cyber','theme-slate','theme-dark')
+    if (theme !== 'dark' && theme !== 'slate') document.body.classList.add(`theme-${theme}`)
+    const defaults = { slate:'#0EA5E9', dark:'#6366F1', red:'#EF4444', neon:'#00FF88', ember:'#F97316', rose:'#F43F5E', teal:'#14B8A6', gold:'#F59E0B', cyber:'#A855F7' }
     const col = defaults[theme] || '#0EA5E9'
     document.documentElement.style.setProperty('--accent', col)
     const rgb = col.replace('#','').match(/.{2}/g).map(h=>parseInt(h,16)).join(',')

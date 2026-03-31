@@ -184,6 +184,41 @@ const ICONS = {
       <path d="M15 3V3C16.8638 3 17.7956 3 18.5307 3.30448C19.5108 3.71046 20.2895 4.48915 20.6955 5.46927C21 6.20435 21 7.13623 21 9V9"/>
     </svg>
   ),
+  storage: (
+    <svg
+      width={20}
+      height={20}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x={2} y={5} width={20} height={3} rx={1}/>
+      <rect x={2} y={11} width={20} height={3} rx={1}/>
+      <rect x={2} y={17} width={20} height={3} rx={1}/>
+      <circle cx={6} cy={6.5} r={1.5} fill="currentColor"/>
+      <circle cx={6} cy={12.5} r={1.5} fill="currentColor"/>
+      <circle cx={6} cy={18.5} r={1.5} fill="currentColor"/>
+    </svg>
+  ),
+  sharecard: (
+    <svg
+      width={20}
+      height={20}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+      <polyline points="16 6 12 2 8 6"/>
+      <line x1={12} y1={2} x2={12} y2={15}/>
+    </svg>
+  ),
 };
 
 export const Wishlist   = ICONS.wishlist;
@@ -197,3 +232,5 @@ export const Screenshots = ICONS.screenshots;
 export const Stats      = ICONS.stats;
 export const Settings   = ICONS.settings;
 export const SystemInfo = ICONS.sysinfo;
+export const Storage    = ICONS.storage;
+export const ShareCard  = ICONS.sharecard;

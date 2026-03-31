@@ -895,3 +895,54 @@ ipcMain.handle('fetch-gog', async (_, { page=1, search='' }) => {
     return { ok:true, games:(data?.products||[]).map(g => ({ id:g.id, title:g.title, cover:gogImg(g.coverHorizontal)||gogImg(g.coverVertical)||null, url:`https://www.gog.com/en/game/${g.slug}`, price:g.price?.finalMoney?.amount==='0.00'?'Free':g.price?.finalMoney?.amount?`$${parseFloat(g.price.finalMoney.amount).toFixed(2)}`:'', discount:g.price?.discount||0, rating:g.reviewsRating?Math.round(g.reviewsRating):null, genres:(g.genres||[]).map(x=>x.name) })) }
   } catch { return { ok:false, games:[] } }
 })
+// ── Storage Manager ───────────────────────────────────────────────────────────
+ipcMain.handle('get-storage-info', async (_, { games }) => {
+  try {
+    const disks = await si.fsSize()
+    const results = []
+
+    for (const game of (games || []).slice(0, 60)) {
+      if (!game.exePath) { results.push({ id: game.id, name: game.name, size: null, installed: false }); continue }
+      try {
+        const dir = path.dirname(game.exePath)
+        if (!fs.existsSync(dir)) { results.push({ id: game.id, name: game.name, size: null, installed: false }); continue }
+        // Recursively sum folder size
+        let total = 0
+        const walk = (d, depth = 0) => {
+          if (depth > 4) return
+          try {
+            for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+              const fp = path.join(d, e.name)
+              try {
+                if (e.isDirectory()) walk(fp, depth + 1)
+                else total += fs.statSync(fp).size
+              } catch {}
+            }
+          } catch {}
+        }
+        walk(dir)
+        results.push({ id: game.id, name: game.name, exePath: game.exePath, size: total, installed: true, dir })
+      } catch {
+        results.push({ id: game.id, name: game.name, size: null, installed: false })
+      }
+    }
+
+    return {
+      ok: true,
+      games: results.sort((a, b) => (b.size || 0) - (a.size || 0)),
+      disks: disks.map(d => ({ fs: d.fs, mount: d.mount, size: d.size, used: d.used, available: d.available, use: d.use })),
+    }
+  } catch (e) {
+    return { ok: false, error: e.message }
+  }
+})
+
+// ── Shareable Card — generate game card data ──────────────────────────────────
+ipcMain.handle('get-share-card-data', async (_, { gameIds, games }) => {
+  try {
+    const selected = (games || []).filter(g => gameIds.includes(g.id)).slice(0, 6)
+    return { ok: true, games: selected }
+  } catch (e) {
+    return { ok: false, error: e.message }
+  }
+})

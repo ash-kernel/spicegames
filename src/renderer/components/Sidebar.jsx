@@ -13,19 +13,22 @@ import {
   Screenshots,
   Stats,
   Settings,
-  SystemInfo
+  SystemInfo,
+  Storage,
+  ShareCard
 } from '../icons/sideicons'
 
 const NAV = [
   { path: '/library', label: 'Library', icon: Library },
   { path: '/discover', label: 'Discover', icon: Discover },
   { path: '/itch', label: 'itch.io', icon: Itch },
-  { path: '/wishlist', label: 'Wishlist', icon: Wishlist },
   { path: '/deals', label: 'Deals', icon: Deals },
+  { path: '/wishlist', label: 'Wishlist', icon: Wishlist },
+  { path: '/stats', label: 'Stats', icon: Stats },
   { path: '/news', label: 'News', icon: News },
   { path: '/controller', label: 'Inputs', icon: Controller },
   { path: '/screenshots', label: 'Screenshots', icon: Screenshots },
-  { path: '/stats', label: 'Stats', icon: Stats },
+  { path: '/storage', label: 'Storage Manager', icon: Storage },
   { path: '/systeminfo', label: 'System Info', icon: SystemInfo },
 ]
 
@@ -172,6 +175,7 @@ export default function Sidebar() {
         ))}
       </div>
 
+      <NavBtn label="Share Card" icon={ShareCard} active={location.pathname === '/shareable-card'} expanded={expanded} onClick={() => go('/shareable-card')} />
       <NavBtn label="Settings" icon={Settings} active={location.pathname === '/settings'} expanded={expanded} onClick={() => go('/settings')} />
     </div>
   )

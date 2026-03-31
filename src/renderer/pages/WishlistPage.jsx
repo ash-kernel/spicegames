@@ -55,7 +55,7 @@ function PriceHistoryChart({ history, lowestEver, gameName }) {
           return (
             <g key={i}>
               <line x1={PAD.l} y1={y} x2={W-PAD.r} y2={y} stroke="rgba(255,255,255,.05)" strokeDasharray="3,3" />
-              <text x={PAD.l-6} y={y+4} fontSize="9" fill="rgba(255,255,255,.35)" textAnchor="end">${price.toFixed(0)}</text>
+              {i > 0 && <text x={PAD.l-6} y={y+4} fontSize="9" fill="rgba(255,255,255,.35)" textAnchor="end">${price.toFixed(0)}</text>}
             </g>
           )
         })}

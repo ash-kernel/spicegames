@@ -73,6 +73,7 @@ export default function DealsPage() {
   const [storeFilter, setStoreFilter] = useState('')
   const [maxPrice,    setMaxPrice]    = useState(0)
   const [currency,    setCurrency]    = useState(CURRENCIES[0])
+  const [searchQuery, setSearchQuery]  = useState('')
 
   const load = async (sort, store, price) => {
     if (!IS) return
@@ -99,6 +100,10 @@ export default function DealsPage() {
   const savings75  = deals.filter(d => d.savings >= 75).length
   const freeDeals  = deals.filter(d => d.salePrice === 0).length
 
+  const filteredDeals = deals.filter(d => 
+    d.title.toLowerCase().includes(searchQuery.toLowerCase())
+  )
+
   return (
     <div style={{ height:'100%', display:'flex', flexDirection:'column', overflow:'hidden' }}>
       <div style={{ padding:'16px 22px 12px', borderBottom:'1px solid var(--border)', flexShrink:0 }}>
@@ -122,6 +127,9 @@ export default function DealsPage() {
         </div>
 
         <div style={{ display:'flex', gap:8, flexWrap:'wrap', alignItems:'center' }}>
+          <input placeholder="Search deals..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
+            style={{ background:'var(--bg3)', border:'1px solid var(--border2)', color:'var(--text)', fontFamily:'var(--font-body)', padding:'6px 12px', borderRadius:20, fontSize:12, outline:'none', flexGrow:1, minWidth:180 }} />
+          
           <div style={{ display:'flex', gap:5, flexWrap:'wrap' }}>
             {SORT_OPTIONS.map(o => (
               <button key={o.v} onClick={() => handleSort(o.v)}
@@ -172,7 +180,11 @@ export default function DealsPage() {
         )}
         {IS && !loading && deals.length > 0 && (
           <div style={{ display:'flex', flexDirection:'column', gap:8 }}>
-            {deals.map((d,i) => <DealCard key={d.dealId||i} deal={d} currency={currency} index={i} />)}
+            {filteredDeals.length > 0 ? (
+              filteredDeals.map((d,i) => <DealCard key={d.dealId||i} deal={d} currency={currency} index={i} />)
+            ) : (
+              <div style={{ textAlign:'center', padding:'80px 20px', color:'var(--text3)' }}><div style={{ fontSize:44, marginBottom:12, opacity:.25 }}>🔍</div><p>No deals matching "{searchQuery}"</p></div>
+            )}
           </div>
         )}
         {IS && !loading && deals.length === 0 && (

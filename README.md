@@ -25,9 +25,11 @@ Just feed it your games and launch them. Organize your library, track playtime, 
 | **Track Playtime** | See how many hours you've sunk into each game |
 | **Collections** | Favorites, Playing, Backlog — organize your way |
 | **Discover** | Browse tons of games by genre |
-| **Find Deals** | See deals from Steam, Epic, GOG, Humble |
+| **Find Deals** | See deals from Steam, Epic, GOG, Humble — with search |
 | **Game News** | News from PC Gamer, IGN, and others |
-| **Extras** | Input testers, screenshots, widget mode, 9 themes |
+| **Share Card** | Create shareable game cards with your library |
+| **Storage Manager** | Monitor disk usage and find large games |
+| **Extras** | Input tester, screenshots, widget mode, 9 themes |
 
 Everything works offline. No accounts. No tracking.
 

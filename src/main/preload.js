@@ -67,4 +67,5 @@ contextBridge.exposeInMainWorld('spicegames', {
   searchItch:     (opts) => ipcRenderer.invoke('search-itch', opts),
   getItchDetails: (opts) => ipcRenderer.invoke('get-itch-details', opts),
   isElectron: true,
+  getStorageInfo:     (opts) => ipcRenderer.invoke('get-storage-info', opts),
 })

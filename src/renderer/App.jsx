@@ -15,15 +15,17 @@ import WishlistPage from './pages/WishlistPage'
 import WidgetPage from './pages/WidgetPage'
 import ControllerPage from './pages/ControllerPage'
 import SystemInfoPage from './pages/SystemInfoPage'
+import ShareableCardPage from './pages/ShareableCard'
 import AddGameModal from './components/AddGameModal'
 import GameDetailPanel from './components/GameDetailPanel'
+import StorageManagerPage from './pages/StorageManager'
 
 import { useStore } from './store/useStore'
 import toast from 'react-hot-toast'
 
 const IS = typeof window !== 'undefined' && window.spicegames != null
 
-const ROUTES = ['/library','/itch','/deals','/news','/controller','/screenshots','/stats','/settings', '/systeminfo']
+const ROUTES = ['/library','/itch','/deals','/news','/controller','/screenshots','/stats','/shareable-card','/settings', '/systeminfo']
 
 function GamepadNav() {
   const navigate        = useNavigate()
@@ -107,9 +109,9 @@ function AppLayout() {
     document.title = 'SpiceDeck'
     if (IS) {
       const saved = (() => { try { return JSON.parse(localStorage.getItem('sw_settings') || '{}') } catch { return {} } })()
-      document.body.classList.remove('theme-red','theme-neon','theme-ember','theme-rose','theme-teal','theme-gold','theme-cyber','theme-slate')
+      document.body.classList.remove('theme-red','theme-neon','theme-ember','theme-rose','theme-teal','theme-gold','theme-cyber','theme-slate','theme-dark')
       const t = saved.theme || 'slate'
-      if (t !== 'slate') document.body.classList.add(`theme-${t}`)
+      if (t !== 'slate' && t !== 'dark') document.body.classList.add(`theme-${t}`)
       const accent = saved.accentColor || '#6366F1'
       document.documentElement.style.setProperty('--accent', accent)
       const rgb = accent.replace('#','').match(/.{2}/g).map(h => parseInt(h, 16)).join(',')
@@ -163,8 +165,10 @@ function AppLayout() {
               <Route path="/controller"  element={<ControllerPage />} />
               <Route path="/screenshots" element={<ScreenshotsPage />} />
               <Route path="/stats"       element={<StatsPage />} />
+              <Route path="/shareable-card" element={<ShareableCardPage />} />
               <Route path="/settings"    element={<SettingsPage />} />
               <Route path="/systeminfo"  element={<SystemInfoPage />} />
+              <Route path="/storage"  element={<StorageManagerPage />} />
             </Routes>
           </div>
           {selectedGame && onLibrary && <GameDetailPanel />}
