@@ -16,7 +16,7 @@ Just feed it your games and launch them. Organize your library, track playtime, 
 
 ---
 
-## ✨ What you can do
+## What you can do
 
 | Feature | What it does |
 |---|---|
@@ -68,6 +68,8 @@ All versions available here: https://github.com/ash-kernel/spicedeck/releases
 ## ⚠️ SmartScreen Warning
 
 Windows might warn you the app is unsigned. Don't worry — just click **More info → Run anyway**. It's totally safe.
+
+> im not rich to get licensed 
 
 ---
 
