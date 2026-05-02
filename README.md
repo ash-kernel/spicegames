@@ -86,4 +86,4 @@ No accounts. No tracking. No analytics. Your game library stays on your computer
 
 Made by [ash-kernel](https://github.com/ash-kernel)
 
-</div>
+</div>             
