@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - SpiceDeck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@200;300;400;600&family=DM_Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #111111;
+            --border: #1a1a1a;
+            --text: #ffffff;
+            --text-secondary: #888888;
+            --accent: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        /* Content */
+        .content {
+            padding: 6rem 0 4rem;
+        }
+
+        h1 {
+            font-family: 'Newsreader', serif;
+            font-size: 3.5rem;
+            font-weight: 200;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-family: 'Newsreader', serif;
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        ul {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: var(--text);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .nav-links {
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">SpiceDeck</a>
+                <ul class="nav-links">
+                    <li><a href="https://github.com/ash-kernel/spicedeck">GitHub</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="container">
+                <h1>Privacy Policy</h1>
+                <p class="last-updated">Last updated: May 3, 2026</p>
+
+                <h2>Our Commitment</h2>
+                <p>SpiceDeck is built on a simple principle: your privacy is non-negotiable. We believe your gaming library and usage patterns are your personal information, and they should stay that way.</p>
+
+                <h2>What We Don't Collect</h2>
+                <p>SpiceDeck does not collect, transmit, or store any personal data. Specifically:</p>
+                <ul>
+                    <li>No user accounts or authentication systems</li>
+                    <li>No analytics or usage tracking</li>
+                    <li>No telemetry or crash reporting</li>
+                    <li>No advertising identifiers or third-party trackers</li>
+                    <li>No cloud storage or data synchronization</li>
+                </ul>
+
+                <h2>How Your Data is Stored</h2>
+                <p>All application data is stored locally on your device:</p>
+                <ul>
+                    <li><strong>Game library data</strong> is stored in local database files on your computer</li>
+                    <li><strong>User preferences</strong> and settings are saved in local configuration files</li>
+                    <li><strong>Game metadata</strong> (covers, ratings) is cached locally after being fetched from public APIs</li>
+                    <li><strong>Playtime statistics</strong> are tracked and stored entirely on your device</li>
+                </ul>
+
+                <h2>Third-Party Services</h2>
+                <p>SpiceDeck may fetch data from third-party services to enhance your experience:</p>
+                <ul>
+                    <li><strong>Game metadata APIs</strong> to retrieve covers, ratings, and completion times</li>
+                    <li><strong>Gaming news sources</strong> (PC Gamer, IGN) for news feeds</li>
+                    <li><strong>Store APIs</strong> (Steam, Epic, GOG, Humble) for deal information</li>
+                </ul>
+                <p>These requests are made directly from your device to the respective services. We do not proxy or monitor these requests. Each service has its own privacy policy and terms of service.</p>
+
+                <h2>Internet Connectivity</h2>
+                <p>SpiceDeck can function completely offline. Internet connectivity is only required for:</p>
+                <ul>
+                    <li>Fetching game covers and metadata for newly added games</li>
+                    <li>Viewing current game deals from stores</li>
+                    <li>Reading gaming news feeds</li>
+                </ul>
+                <p>All core functionality (launching games, viewing library, tracking playtime) works without an internet connection.</p>
+
+                <h2>Open Source</h2>
+                <p>SpiceDeck is open source software. You can review the entire codebase on GitHub to verify that we do not collect or transmit personal data. The source code is available at <a href="https://github.com/ash-kernel/spicedeck" style="color: var(--accent);">github.com/ash-kernel/spicedeck</a>.</p>
+
+                <h2>Changes to This Policy</h2>
+                <p>If we make changes to this privacy policy, we will update the "Last updated" date at the top of this page. Continued use of SpiceDeck after changes constitutes acceptance of the updated policy.</p>
+
+                <h2>Contact</h2>
+                <p>If you have questions about this privacy policy, please open an issue on our GitHub repository or contact the developer at <a href="https://github.com/ash-kernel" style="color: var(--accent);">github.com/ash-kernel</a>.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">© 2026 SpiceDeck. Made by ash-kernel.</div>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/ash-kernel/spicedeck">GitHub</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

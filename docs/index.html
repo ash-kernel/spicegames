@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpiceDeck - Your Games, One Launcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@200;300;400;600&family=DM_Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #111111;
+            --border: #1a1a1a;
+            --text: #ffffff;
+            --text-secondary: #888888;
+            --accent: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 12rem 0 8rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Newsreader', serif;
+            font-size: 5.5rem;
+            font-weight: 200;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--text);
+            color: var(--bg);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-radius: 2px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+        }
+
+        /* Features */
+        .features {
+            padding: 8rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem 3rem;
+            margin-top: 6rem;
+        }
+
+        .feature {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Stats */
+        .stats {
+            padding: 8rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Newsreader', serif;
+            font-size: 3.5rem;
+            font-weight: 200;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Download */
+        .download {
+            padding: 8rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .download h2 {
+            font-family: 'Newsreader', serif;
+            font-size: 3rem;
+            font-weight: 200;
+            margin-bottom: 1.5rem;
+        }
+
+        .download-note {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            max-width: 600px;
+        }
+
+        .section-title {
+            font-family: 'Newsreader', serif;
+            font-size: 3rem;
+            font-weight: 200;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Smooth fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero, .features, .stats, .download {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">SpiceDeck</div>
+                <ul class="nav-links">
+                    <li><a href="https://github.com/ash-kernel/spicedeck">GitHub</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Your games,<br>one launcher</h1>
+                <p class="subtitle">A lightweight game library manager for Windows. No accounts, no tracking, no unnecessary features.</p>
+                <a href="https://github.com/ash-kernel/spicedeck/releases/download/stable/SpiceDeck.Setup.exe" class="cta">Download for Windows</a>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Features</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">9</div>
+                        <div class="stat-label">Themes</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Accounts</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Tracking</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Built for simplicity</h2>
+                    <p class="section-subtitle">Everything you need to manage your game library, nothing you don't.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-title">Unified Library</div>
+                        <p class="feature-desc">Add games from any source. Steam imports, manual .exe files, or external launchers.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Automatic Metadata</div>
+                        <p class="feature-desc">Covers, ratings, and completion times fetched automatically for your games.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Playtime Tracking</div>
+                        <p class="feature-desc">See exactly how long you've played each game in your library.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Collections</div>
+                        <p class="feature-desc">Organize with favorites, currently playing, and backlog collections.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Game Discovery</div>
+                        <p class="feature-desc">Browse thousands of games filtered by genre to find your next play.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Deal Finder</div>
+                        <p class="feature-desc">Track deals across Steam, Epic, GOG, and Humble with integrated search.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Gaming News</div>
+                        <p class="feature-desc">Stay updated with curated news from PC Gamer, IGN, and more.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Storage Manager</div>
+                        <p class="feature-desc">Monitor disk usage and identify large games taking up space.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Offline First</div>
+                        <p class="feature-desc">Everything works offline. Your data stays on your machine.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="download">
+            <div class="container">
+                <h2>Ready to organize your library?</h2>
+                <p class="subtitle" style="margin-bottom: 3rem;">Download SpiceDeck for Windows</p>
+                <a href="https://github.com/ash-kernel/spicedeck/releases/download/stable/SpiceDeck.Setup.exe" class="cta">Download Now</a>
+                <p class="download-note">Windows may show a SmartScreen warning. Click "More info → Run anyway"</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">© 2026 SpiceDeck. Made by ash-kernel.</div>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/ash-kernel/spicedeck">GitHub</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
