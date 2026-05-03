@@ -1,6 +1,6 @@
 {
   "name": "spicedeck",
-  "version": "6.5.0",
+  "version": "6.5.5",
   "description": "SpiceDeck — Personal Game Launcher",
   "main": "src/main/main.js",
   "author": "ash-kernel",

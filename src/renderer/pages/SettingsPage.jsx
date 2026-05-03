@@ -300,8 +300,8 @@ export default function SettingsPage() {
                 <div style={{ fontSize:11, color:'var(--text3)', marginTop:2 }}>v{version} · Electron 28 · React 18</div>
                 <div style={{ display:'flex', gap:8, marginTop:6 }}>
                   {[
-                    ['Privacy Policy', 'https://ash-kernel.github.io/spicedeck/#legal'],
-                    ['Terms',          'https://ash-kernel.github.io/spicedeck/#legal'],
+                    ['Privacy Policy', 'https://ash-kernel.github.io/spicedeck/privacy.html'],
+                    ['Terms',          'https://ash-kernel.github.io/spicedeck/terms.html'],
                     ['GitHub ↗',       'https://github.com/ash-kernel'],
                   ].map(([label, url]) => (
                     <span key={label} onClick={() => window.spicegames?.openExternal(url)}
