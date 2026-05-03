@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - SpiceDeck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@200;300;400;600&family=DM_Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #111111;
+            --border: #1a1a1a;
+            --text: #ffffff;
+            --text-secondary: #888888;
+            --accent: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .content {
+            padding: 6rem 0 4rem;
+        }
+
+        h1 {
+            font-family: 'Newsreader', serif;
+            font-size: 3.5rem;
+            font-weight: 200;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-family: 'Newsreader', serif;
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        ul {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: var(--text);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .nav-links {
+                gap: 2rem;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">SpiceDeck</a>
+                <ul class="nav-links">
+                    <li><a href="https://github.com/ash-kernel/spicedeck">GitHub</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="tos.html">Terms</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="container">
+                <h1>Terms of Service</h1>
+                <p class="last-updated">Last updated: May 3, 2026</p>
+
+                <h2>Acceptance of Terms</h2>
+                <p>By downloading, installing, or using SpiceDeck, you agree to these Terms of Service. If you do not agree, please do not use the software.</p>
+
+                <h2>About SpiceDeck</h2>
+                <p>SpiceDeck is an open-source game library and launcher designed to help users organize, view, and launch their games. The software is provided as-is and may include integrations with third-party services for metadata, news, and store information.</p>
+
+                <h2>Eligibility</h2>
+                <p>You may use SpiceDeck only if you are legally allowed to do so in your region and you accept responsibility for complying with all applicable laws and platform rules.</p>
+
+                <h2>Permitted Use</h2>
+                <p>You may use SpiceDeck for personal, non-commercial, or other lawful purposes, including:</p>
+                <ul>
+                    <li>Managing your local game library</li>
+                    <li>Launching installed games on your device</li>
+                    <li>Viewing game metadata, news, and store information</li>
+                    <li>Customizing the app for your own use</li>
+                    <li>Reviewing and modifying the open-source codebase in accordance with its license</li>
+                </ul>
+
+                <h2>Prohibited Use</h2>
+                <p>You agree not to misuse SpiceDeck or attempt to harm the application, its users, or third-party services. Prohibited actions include:</p>
+                <ul>
+                    <li>Reverse engineering, exploiting, or disrupting the software</li>
+                    <li>Using the application for unlawful activity</li>
+                    <li>Attempting to bypass security, licensing, or access controls</li>
+                    <li>Injecting malicious code, malware, or harmful scripts</li>
+                    <li>Interfering with third-party APIs or services used by the app</li>
+                    <li>Redistributing modified versions in a way that violates the applicable open-source license</li>
+                </ul>
+
+                <h2>Third-Party Services</h2>
+                <p>SpiceDeck may connect to third-party services such as game metadata providers, store APIs, and gaming news sources. Those services are operated by their own providers, and your use of them is subject to their own terms and privacy policies.</p>
+
+                <h2>Open Source Software</h2>
+                <p>SpiceDeck is open source. The source code is available on GitHub and may be reviewed, forked, or modified according to the license attached to the repository. The license governing the project repository takes priority over any general statements on this page.</p>
+
+                <h2>Ownership</h2>
+                <p>All trademarks, logos, and third-party brand names mentioned in SpiceDeck remain the property of their respective owners. SpiceDeck does not claim ownership of third-party game art, metadata, or service content fetched from external sources.</p>
+
+                <h2>Disclaimer of Warranty</h2>
+                <p>SpiceDeck is provided on an "as is" and "as available" basis without warranties of any kind, whether express or implied. We do not guarantee uninterrupted operation, error-free performance, or that every third-party integration will always remain available.</p>
+
+                <h2>Limitation of Liability</h2>
+                <p>To the fullest extent permitted by law, SpiceDeck and its contributors will not be liable for any indirect, incidental, special, consequential, or punitive damages arising from the use or inability to use the software.</p>
+
+                <h2>Changes to the Service</h2>
+                <p>We may update, modify, or discontinue any part of SpiceDeck at any time. Features, integrations, and supported services may change without prior notice.</p>
+
+                <h2>Changes to These Terms</h2>
+                <p>We may revise these Terms of Service from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of SpiceDeck after changes means you accept the revised terms.</p>
+
+                <h2>Contact</h2>
+                <p>If you have questions about these terms, please open an issue on the <a href="https://github.com/ash-kernel/spicedeck">SpiceDeck GitHub repository</a> or contact the developer at <a href="https://github.com/ash-kernel">github.com/ash-kernel</a>.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">© 2026 SpiceDeck. Made by ash-kernel.</div>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/ash-kernel/spicedeck">GitHub</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="tos.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
