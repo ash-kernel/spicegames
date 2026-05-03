@@ -10,7 +10,9 @@ Just feed it your games and launch them. Organize your library, track playtime, 
 <br/>
 
 [![Platform](https://img.shields.io/badge/Platform-Windows-blue?logo=windows&logoColor=white)](#)
+
 [![Version](https://img.shields.io/github/v/release/ash-kernel/spicedeck?color=blue)](https://github.com/ash-kernel/spicedeck/releases)
+
 [![Downloads](https://img.shields.io/github/downloads/ash-kernel/spicedeck/total?color=blue)](https://github.com/ash-kernel/spicedeck/releases)
 
 <br/>
@@ -86,4 +88,6 @@ No accounts. No tracking. No analytics. Your game library stays on your computer
 
 Made by [ash-kernel](https://github.com/ash-kernel)
 
-</div>             
+© 2026 SpiceDeck | All rights reserved.
+
+</div>
